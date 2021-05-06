@@ -1,20 +1,104 @@
-package contact;
-
-import java.util.List;
-
-import phone.Phone;
+//Facundo Zamora, fzamora994@alumnos.iua.edu.ar
 
 public class Contacts {
 
-    //name, surname, etc
+
+    public Contacts() {
+    }
+
+    public Contacts(String n, String s, String b, String p, String m) {
+
+        this.setName(n);
+
+        this.setSurname(s);
+
+        this.setBusiness(b);
+
+        this.setPosition(p);
+
+        this.setMail(m);
+
+    }
+
+
+    // añadir validaciones
+
+    // name, surname, etc
     private String name;
+
+    private String surname;
+    private String nickname;
+
+    // personal dates
+    private String birth;
+    private String relationship;
+
+    // phone
+    public Phone numPhone = new Phone();
+
+    //country
+    private String country;
+
+    // business
+    private String business;
+    private String position;
+    private String departament;
+
+    // direction hacer de esto una clase direccion que contenga los datos que se
+    // listan y que se puedan agregar mas contactos
+    private String direction;
+    private String direction2;
+    private String postalCode;
+    private String city;
+    private String province;
+    private String postalMail;
+
+    // mail
+    private String mail;
+    private String web;
+    private String chat;
+    private String webCall;
+
+    // weird things
+    private String preffix;
+    private String suffix;
+    private String phoneticName;
+    private String phoneticSecondName;
+    private String phoneticSurname;
+    private String fileAs;
+    private String events;
+
+    // string things
+    private String personalized;
+    private String notes;
+
+    // label
+    private String label;
+
+    public String getLabel() {
+        return this.label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
     public String getName() {
         return this.name;
     }
 
     public void setName(String name) {
-        this.name = name;
+
+        try {
+            
+            validation(name);
+
+            this.name = name;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
     }
 
     public String getSurname() {
@@ -22,7 +106,26 @@ public class Contacts {
     }
 
     public void setSurname(String surname) {
-        this.surname = surname;
+
+        try {
+            
+            validation(surname);
+
+            this.surname = surname;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        
+    }
+
+    public String getCountry() {
+        return this.country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getNickname() {
@@ -49,20 +152,22 @@ public class Contacts {
         this.relationship = relationship;
     }
 
-    public List<Phone> getListPhone() {
-        return this.listPhone;
-    }
-
-    public void setListPhone(List<Phone> listPhone) {
-        this.listPhone = listPhone;
-    }
-
     public String getBusiness() {
         return this.business;
     }
 
     public void setBusiness(String business) {
-        this.business = business;
+
+        try {
+            
+            validation(business);
+
+            this.business = business;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
     }
 
     public String getPosition() {
@@ -232,47 +337,29 @@ public class Contacts {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-	private String surname;
-    private String nickname;
 
-    //personal dates
-    private String birth;
-    private String relationship;
+   
+    public void validation(String word) {
 
-    //phone
-    private List <Phone> listPhone;
+        for (int i = 0; i < word.length(); i++) {
 
-    //business
-    private String business;
-	private String position;
-	private String departament;
+            char c = word.trim().charAt(i);
 
-    //direction
-    private String direction;
-	private String direction2;
-	private String postalCode;
-	private String city;
-	private String province;
-	private String postalMail;
+            if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))) {
 
-    //mail
-	private String mail;
-    private String web;
-	private String chat;
-	private String webCall;
+                throw new IllegalArgumentException(
+                        "Invalid parameter: " + word + ". Only English alphabet characters are allowed.");
+            }
+        }
 
-    //weird things
-    private String preffix;
-	private String suffix;
-	private String phoneticName;
-	private String phoneticSecondName;
-	private String phoneticSurname;
-	private String fileAs;
-	private String events;
+    }
 
-    //string things
-	private String personalized;
-	private String notes;
+    @Override
+    public String toString(){
 
-    
+        String ts = this.getName() + " " + this.getSurname() + " " + this.numPhone + " " + this.country + " " + this.label;
+
+        return ts;
+    }
+
 }

@@ -1,20 +1,53 @@
-package bd;
+//Facundo Zamora, fzamora994@alumnos.iua.edu.ar
 
-import java.util.HashMap;
-import java.util.Map;
-
-import contact.Contacts;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBase {
-    
-    private static Map <String, Contacts> contacts = new HashMap<String, Contacts>();
 
-    public static void setContact( Contacts c ){
-        contacts.put(c.getName(), c);
+    List <Contacts> dataBase = new ArrayList<Contacts>();
+
+
+    public  List <Contacts> getDataBase(){
+
+        return dataBase;
     }
 
-    public static Contacts getContactByName( String name ){
-        return contacts.get(name);
+    public void show() {
+
+        for (int i = 0; i < dataBase.size(); i++) {
+
+            show(i);
+
+        }
+
+    }
+
+    public void show(int i) {
+
+        System.out.println((i + 1) + ") " + dataBase.get(i));
+
+    }
+
+    public void add(Contacts... c) {
+
+        for (Contacts contact : c) {
+
+            dataBase.add(contact);
+        }
+
+    }
+
+    public void edit(Contacts c, int index) {
+
+        dataBase.add(index, c);
+
+    }
+
+    public void delete(int index) {
+
+        dataBase.remove(index);
+
     }
 
 }

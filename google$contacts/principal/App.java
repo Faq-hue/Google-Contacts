@@ -1,16 +1,21 @@
-package principal;
+//Facundo Zamora, fzamora994@alumnos.iua.edu.ar
 
-import bd.DataBase;
-
-class App{
+class App {
 
     public static void main(String[] args) {
-        
-        
 
-        DataBase.setContact(c);
+        DataBase db = new DataBase();
+
+        for (int i = 0; i < 5; i++) {
+
+            db.add(GenerateContact.contactGenerator());
+
+        }
+
+        db.show();
+
+        Label.searchByLabel("Work", db);
 
     }
-
 
 }
