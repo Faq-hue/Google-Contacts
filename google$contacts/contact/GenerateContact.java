@@ -11,8 +11,11 @@ public class GenerateContact {
         contact.setSurname(generateSurname());
         contact.setBusiness(generateBusiness());
         contact.setPosition(generatePosition());
-        contact.setMail(generateGmail());
-        contact.numPhone.setPhone(generatePhoneNumber());
+        contact.setListEmailLabel(generateMail(), generateLabel());
+        contact.setListEmailLabel(generateMail(), generateLabel());
+        contact.setListPhoneLabel(generatePhoneNumber(), generateLabel());
+        contact.setListPhoneLabel(generatePhoneNumber(), generateLabel());
+        contact.setListPhoneLabel(generatePhoneNumber(), generateLabel());
         contact.setCountry(generateCountry());
         contact.setLabel(generateLabel());
 
@@ -89,9 +92,15 @@ public class GenerateContact {
         return x;
     }
 
-    public static String generateGmail() {
+    public static String generateMail() {
 
-        return mail + "@gmail.com";
+        String domain[] = { "@gmail.com", "@hotmail.com", "@protonmail.com", "@alumnos.iua.edu.ar", "@iua.edu.ar"};
+
+        Random r = new Random();
+
+        int x = r.nextInt(4);
+
+        return mail + domain[x];
     }
 
     public static String generateCountry() {
@@ -100,12 +109,12 @@ public class GenerateContact {
 
         Countries c = new Countries();
 
-        return c.selectCountry(r.nextInt(193)+1);
+        return c.selectCountry(r.nextInt(193) + 1);
     }
 
-    public static String generateLabel(){
+    public static String generateLabel() {
 
-        String [] label = {"Friends","Family","Work","School","Gym"} ;
+        String[] label = { "Friends", "Family", "Work", "School", "Gym" };
 
         Random r = new Random();
 
@@ -113,4 +122,5 @@ public class GenerateContact {
 
         return label[x];
     }
+
 }

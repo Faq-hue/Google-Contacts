@@ -12,9 +12,29 @@ class App {
 
         }
 
+        System.out.println("Show contact list");
+
         db.show();
 
-        Label.searchByLabel("Work", db);
+        System.out.println("\nDelete contact 3");
+
+        db.delete(2);
+
+        System.out.println("\nShow contact list again");
+
+        db.show();
+
+        System.out.println("\nAdd contact");
+
+        db.add(GenerateContact.contactGenerator());
+
+        System.out.println("\nShow contact list again");
+
+        db.show();
+
+        System.out.println("\nSearch by contact label: Work");
+
+        ContactLabel.searchByLabel("Work", db);
 
     }
 

@@ -7,7 +7,6 @@ public class DataBase {
 
     List <Contacts> dataBase = new ArrayList<Contacts>();
 
-
     public  List <Contacts> getDataBase(){
 
         return dataBase;

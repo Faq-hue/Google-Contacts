@@ -1,31 +1,26 @@
+import java.util.ArrayList;
+
 //Facundo Zamora, fzamora994@alumnos.iua.edu.ar
 
 public class Contacts {
 
-
     public Contacts() {
     }
 
-    public Contacts(String n, String s, String b, String p, String m) {
-
-        this.setName(n);
-
-        this.setSurname(s);
-
-        this.setBusiness(b);
-
-        this.setPosition(p);
-
-        this.setMail(m);
-
-    }
-
+    // general label
+    private ArrayList<GeneralLabel> phoneLabel = new ArrayList<GeneralLabel>();
+    private ArrayList<GeneralLabel> emailLabel = new ArrayList<GeneralLabel>();
+    private GeneralLabel eventsLabel = new GeneralLabel();
+    private GeneralLabel webLabel = new GeneralLabel();
+    private GeneralLabel webCallLabel = new GeneralLabel();
+    private GeneralLabel relationshipLabel = new GeneralLabel();
+    private GeneralLabel chatLabel = new GeneralLabel();
+    private GeneralLabel personalizedLabel = new GeneralLabel();
 
     // añadir validaciones
 
     // name, surname, etc
     private String name;
-
     private String surname;
     private String nickname;
 
@@ -33,10 +28,7 @@ public class Contacts {
     private String birth;
     private String relationship;
 
-    // phone
-    public Phone numPhone = new Phone();
-
-    //country
+    // country
     private String country;
 
     // business
@@ -44,20 +36,13 @@ public class Contacts {
     private String position;
     private String departament;
 
-    // direction hacer de esto una clase direccion que contenga los datos que se
-    // listan y que se puedan agregar mas contactos
+    // direction
     private String direction;
     private String direction2;
     private String postalCode;
     private String city;
     private String province;
     private String postalMail;
-
-    // mail
-    private String mail;
-    private String web;
-    private String chat;
-    private String webCall;
 
     // weird things
     private String preffix;
@@ -66,14 +51,142 @@ public class Contacts {
     private String phoneticSecondName;
     private String phoneticSurname;
     private String fileAs;
-    private String events;
 
     // string things
-    private String personalized;
     private String notes;
 
     // label
     private String label;
+
+    // methods
+    public String getPhoneLabel() {
+        return phoneLabel.toString();
+    }
+
+    public void setListPhoneLabel(String data, String label) {
+
+        GeneralLabel a = new GeneralLabel();
+
+        a.setData(data);
+        a.setLabel(label);
+
+        phoneLabel.add(a);
+
+    }
+
+    public String getEmailLabel() {
+        return emailLabel.toString();
+    }
+
+    public void setListEmailLabel(String data, String label) {
+
+        GeneralLabel e = new GeneralLabel();
+
+        e.setData(data);
+        e.setLabel(label);
+
+        emailLabel.add(e);
+
+    }
+
+    public String getEventsLabel() {
+        return eventsLabel.toString();
+    }
+
+    public void setEventsLabel(String data, String label) {
+
+        try {
+
+            validation(data);
+            eventsLabel.setData(data);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        try {
+
+            validation(label);
+            eventsLabel.setLabel(label);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
+    public String getWebLabel() {
+        return webLabel.toString();
+    }
+
+    public void setWebLabel(String data, String label) {
+
+        try {
+
+            validation(data);
+            webLabel.setData(data);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        try {
+
+            validation(label);
+            webLabel.setLabel(label);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
+    public String getWebCallLabel() {
+        return webCallLabel.toString();
+    }
+
+    public void setWebCallLabel(String data, String label) {
+        
+        try {
+
+            validation(data);
+            webCallLabel.setData(data);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        
+        
+        webCallLabel.setLabel(label);
+    }
+
+    public String getRelationshipLabel() {
+        return relationshipLabel.toString();
+    }
+
+    public void setRelationshipLabel(String data, String label) {
+        relationshipLabel.setData(data);
+        relationshipLabel.setLabel(label);
+    }
+
+    public String getChatLabel() {
+        return chatLabel.toString();
+    }
+
+    public void setChatLabel(String data, String label) {
+        chatLabel.setData(data);
+        chatLabel.setLabel(label);
+    }
+
+    public String getPersonalizedLabel() {
+        return personalizedLabel.toString();
+    }
+
+    public void setPersonalizedLabel(String data, String label) {
+        personalizedLabel.setData(data);
+        personalizedLabel.setLabel(label);
+    }
 
     public String getLabel() {
         return this.label;
@@ -90,7 +203,7 @@ public class Contacts {
     public void setName(String name) {
 
         try {
-            
+
             validation(name);
 
             this.name = name;
@@ -98,7 +211,7 @@ public class Contacts {
         } catch (Exception e) {
             System.out.println(e);
         }
-        
+
     }
 
     public String getSurname() {
@@ -108,7 +221,7 @@ public class Contacts {
     public void setSurname(String surname) {
 
         try {
-            
+
             validation(surname);
 
             this.surname = surname;
@@ -117,7 +230,6 @@ public class Contacts {
             System.out.println(e);
         }
 
-        
     }
 
     public String getCountry() {
@@ -159,7 +271,7 @@ public class Contacts {
     public void setBusiness(String business) {
 
         try {
-            
+
             validation(business);
 
             this.business = business;
@@ -167,7 +279,7 @@ public class Contacts {
         } catch (Exception e) {
             System.out.println(e);
         }
-        
+
     }
 
     public String getPosition() {
@@ -234,38 +346,6 @@ public class Contacts {
         this.postalMail = postalMail;
     }
 
-    public String getMail() {
-        return this.mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public String getWeb() {
-        return this.web;
-    }
-
-    public void setWeb(String web) {
-        this.web = web;
-    }
-
-    public String getChat() {
-        return this.chat;
-    }
-
-    public void setChat(String chat) {
-        this.chat = chat;
-    }
-
-    public String getWebCall() {
-        return this.webCall;
-    }
-
-    public void setWebCall(String webCall) {
-        this.webCall = webCall;
-    }
-
     public String getPreffix() {
         return this.preffix;
     }
@@ -314,22 +394,6 @@ public class Contacts {
         this.fileAs = fileAs;
     }
 
-    public String getEvents() {
-        return this.events;
-    }
-
-    public void setEvents(String events) {
-        this.events = events;
-    }
-
-    public String getPersonalized() {
-        return this.personalized;
-    }
-
-    public void setPersonalized(String personalized) {
-        this.personalized = personalized;
-    }
-
     public String getNotes() {
         return this.notes;
     }
@@ -338,7 +402,6 @@ public class Contacts {
         this.notes = notes;
     }
 
-   
     public void validation(String word) {
 
         for (int i = 0; i < word.length(); i++) {
@@ -355,9 +418,11 @@ public class Contacts {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
 
-        String ts = this.getName() + " " + this.getSurname() + " " + this.numPhone + " " + this.country + " " + this.label;
+        String ts = "Name: " + this.getName() + "\nSurname: " + this.getSurname() + "\nPhone and label: "
+                + this.phoneLabel.toString() + "\nCountry: " + this.country + "\nEmail and label: "
+                + this.emailLabel.toString() + "\nContact label: " + this.label;
 
         return ts;
     }
