@@ -1,5 +1,8 @@
 //Facundo Zamora, fzamora994@alumnos.iua.edu.ar
 
+package bd;
+
+import contact.*;
 import java.util.ArrayList;
 import java.util.List;
 

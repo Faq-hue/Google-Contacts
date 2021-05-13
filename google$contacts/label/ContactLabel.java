@@ -1,6 +1,11 @@
-import java.util.List;
-
 //Facundo Zamora, fzamora994@alumnos.iua.edu.ar
+
+package label;
+
+import java.util.List;
+import bd.DataBase;
+import contact.Contacts;
+
 
 public class ContactLabel {
 

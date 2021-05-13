@@ -1,5 +1,7 @@
 //Facundo Zamora, fzamora994@alumnos.iua.edu.ar
 
+package contact;
+
 import java.util.Random;
 
 public class GenerateContact {

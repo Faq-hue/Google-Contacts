@@ -1,5 +1,7 @@
 //Facundo Zamora, fzamora994@alumnos.iua.edu.ar
 
+package label;
+
 public class GeneralLabel {
 
     private String label = new String();

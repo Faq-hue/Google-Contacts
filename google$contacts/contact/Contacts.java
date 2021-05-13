@@ -1,6 +1,9 @@
-import java.util.ArrayList;
-
 //Facundo Zamora, fzamora994@alumnos.iua.edu.ar
+
+package contact;
+
+import java.util.ArrayList;
+import label.GeneralLabel;
 
 public class Contacts {
 
@@ -16,8 +19,6 @@ public class Contacts {
     private GeneralLabel relationshipLabel = new GeneralLabel();
     private GeneralLabel chatLabel = new GeneralLabel();
     private GeneralLabel personalizedLabel = new GeneralLabel();
-
-    // añadir validaciones
 
     // name, surname, etc
     private String name;
@@ -156,9 +157,16 @@ public class Contacts {
             System.out.println(e);
         }
         
+        try {
+
+            validation(label);
+            webCallLabel.setLabel(label);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         
         
-        webCallLabel.setLabel(label);
     }
 
     public String getRelationshipLabel() {
@@ -166,8 +174,28 @@ public class Contacts {
     }
 
     public void setRelationshipLabel(String data, String label) {
-        relationshipLabel.setData(data);
-        relationshipLabel.setLabel(label);
+        
+        try {
+
+            validation(data);
+            relationshipLabel.setData(data);
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+        try {
+
+            validation(label);
+            relationshipLabel.setLabel(label);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        
     }
 
     public String getChatLabel() {
@@ -175,8 +203,28 @@ public class Contacts {
     }
 
     public void setChatLabel(String data, String label) {
-        chatLabel.setData(data);
-        chatLabel.setLabel(label);
+
+        try {
+
+            validation(data);
+            chatLabel.setData(data);
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        try {
+
+            validation(label);
+            chatLabel.setLabel(label);
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+       
+        
     }
 
     public String getPersonalizedLabel() {
@@ -184,8 +232,29 @@ public class Contacts {
     }
 
     public void setPersonalizedLabel(String data, String label) {
-        personalizedLabel.setData(data);
-        personalizedLabel.setLabel(label);
+
+        try {
+
+            validation(data);
+            personalizedLabel.setData(data);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+        try {
+
+            validation(label);
+            personalizedLabel.setLabel(label);
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        
+        
     }
 
     public String getLabel() {
@@ -193,7 +262,18 @@ public class Contacts {
     }
 
     public void setLabel(String label) {
-        this.label = label;
+
+        try {
+
+            validation(label);
+            this.label = label;
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        
     }
 
     public String getName() {
@@ -237,7 +317,9 @@ public class Contacts {
     }
 
     public void setCountry(String country) {
+
         this.country = country;
+        
     }
 
     public String getNickname() {
@@ -245,7 +327,16 @@ public class Contacts {
     }
 
     public void setNickname(String nickname) {
-        this.nickname = nickname;
+
+        try {
+
+            validation(nickname);
+            this.nickname = nickname;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getBirth() {
@@ -253,7 +344,16 @@ public class Contacts {
     }
 
     public void setBirth(String birth) {
-        this.birth = birth;
+
+        try {
+
+            validation(birth);
+            this.birth = birth;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getRelationship() {
@@ -261,7 +361,16 @@ public class Contacts {
     }
 
     public void setRelationship(String relationship) {
-        this.relationship = relationship;
+
+        try {
+
+            validation(relationship);
+            this.relationship = relationship;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getBusiness() {
@@ -287,7 +396,16 @@ public class Contacts {
     }
 
     public void setPosition(String position) {
-        this.position = position;
+
+        try {
+
+            validation(position);
+            this.position = position;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getDepartament() {
@@ -295,7 +413,16 @@ public class Contacts {
     }
 
     public void setDepartament(String departament) {
-        this.departament = departament;
+
+        try {
+
+            validation(departament);
+            this.departament = departament;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getDirection() {
@@ -303,7 +430,16 @@ public class Contacts {
     }
 
     public void setDirection(String direction) {
-        this.direction = direction;
+
+        try {
+
+            validation(direction);
+            this.direction = direction;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getDirection2() {
@@ -311,7 +447,16 @@ public class Contacts {
     }
 
     public void setDirection2(String direction2) {
-        this.direction2 = direction2;
+
+        try {
+
+            validation(direction2);
+            this.direction2 = direction2;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getPostalCode() {
@@ -319,7 +464,16 @@ public class Contacts {
     }
 
     public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
+
+        try {
+
+            validation(postalCode);
+            this.postalCode = postalCode;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getCity() {
@@ -327,7 +481,16 @@ public class Contacts {
     }
 
     public void setCity(String city) {
-        this.city = city;
+
+        try {
+
+            validation(city);
+            this.city = city;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getProvince() {
@@ -335,7 +498,16 @@ public class Contacts {
     }
 
     public void setProvince(String province) {
-        this.province = province;
+
+        try {
+
+            validation(province);
+            this.province = province;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getPostalMail() {
@@ -343,7 +515,16 @@ public class Contacts {
     }
 
     public void setPostalMail(String postalMail) {
-        this.postalMail = postalMail;
+
+        try {
+
+            validation(postalMail);
+            this.postalMail = postalMail;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getPreffix() {
@@ -351,7 +532,16 @@ public class Contacts {
     }
 
     public void setPreffix(String preffix) {
-        this.preffix = preffix;
+
+        try {
+
+            validation(preffix);
+            this.preffix = preffix;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getSuffix() {
@@ -359,7 +549,16 @@ public class Contacts {
     }
 
     public void setSuffix(String suffix) {
-        this.suffix = suffix;
+
+        try {
+
+            validation(suffix);
+            this.suffix = suffix;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getPhoneticName() {
@@ -367,7 +566,16 @@ public class Contacts {
     }
 
     public void setPhoneticName(String phoneticName) {
-        this.phoneticName = phoneticName;
+
+        try {
+
+            validation(phoneticName);
+            this.phoneticName = phoneticName;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getPhoneticSecondName() {
@@ -375,7 +583,16 @@ public class Contacts {
     }
 
     public void setPhoneticSecondName(String phoneticSecondName) {
-        this.phoneticSecondName = phoneticSecondName;
+
+        try {
+
+            validation(phoneticSecondName);
+            this.phoneticSecondName = phoneticSecondName;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getPhoneticSurname() {
@@ -383,7 +600,16 @@ public class Contacts {
     }
 
     public void setPhoneticSurname(String phoneticSurname) {
-        this.phoneticSurname = phoneticSurname;
+
+        try {
+
+            validation(phoneticSurname);
+            this.phoneticSurname = phoneticSurname;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getFileAs() {
@@ -391,7 +617,16 @@ public class Contacts {
     }
 
     public void setFileAs(String fileAs) {
-        this.fileAs = fileAs;
+
+        try {
+
+            validation(fileAs);
+            this.fileAs = fileAs;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public String getNotes() {
@@ -399,6 +634,7 @@ public class Contacts {
     }
 
     public void setNotes(String notes) {
+
         this.notes = notes;
     }
 

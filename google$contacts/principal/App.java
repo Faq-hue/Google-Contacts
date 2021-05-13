@@ -1,5 +1,11 @@
 //Facundo Zamora, fzamora994@alumnos.iua.edu.ar
 
+package principal;
+
+import bd.DataBase;
+import contact.GenerateContact;
+import label.ContactLabel;
+
 class App {
 
     public static void main(String[] args) {
